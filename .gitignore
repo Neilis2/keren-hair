@@ -1,0 +1,19 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Node / local tooling
+node_modules/
+.npm/
+.pnpm-store/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
