@@ -3,79 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KEREN's Hair</title>
-    <meta
-      name="description"
-      content="KEREN's Hair: servicios de peinado a domicilio, reservas por WhatsApp y un proceso claro, amable y transparente para cada clienta."
-    />
+    <title>KEREN's Hair | Tu pelo, tu estilo</title>
+    <meta name="description" content="KEREN's Hair: trenzas y peinados para mujeres, hombres y niños." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="Logo de KEREN's Hair">
-          <div class="brand-mark">KH</div>
-          <div>
-            <p class="brand-name">KEREN'S HAIR</p>
-            <p class="brand-tag">Estilo personal, cuidado real.</p>
-          </div>
-        </div>
-
+        <a class="brand" href="#inicio" aria-label="KEREN's Hair, inicio">
+          <span class="brand-mark">KH</span>
+          <span class="brand-name">KEREN'S HAIR</span>
+        </a>
         <nav class="nav" aria-label="Navegación principal">
+          <a href="#nosotros">Nosotros</a>
           <a href="#servicios">Servicios</a>
+          <a href="#portafolio">Portafolio</a>
           <a href="#reservar">Reservar</a>
-          <a href="#portfolio">Portafolio</a>
-          <a href="#politica">Política</a>
-          <a href="#referidos">Referidos</a>
         </nav>
-
-        <div class="header-actions">
-          <label class="language-switch" aria-label="Selector de idioma">
-            <span>ES</span>
-            <select aria-label="Idioma">
-              <option value="es" selected>ES</option>
-              <option value="en">EN</option>
-            </select>
-          </label>
-          <a class="button button-primary" href="#reservar">Reservar</a>
-        </div>
+        <a class="button button-gold header-cta" href="#reservar">Reservar ahora</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Peinados a domicilio</p>
-            <h1>Tu estilo, con calma, detalle y confianza.</h1>
-            <p class="lead">
-              KEREN'S Hair crea looks pensados para ti, con atención personal,
-              precios claros y una experiencia sin estrés desde la primera consulta.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#reservar">Haz tu reserva</a>
-              <a class="button button-secondary" href="#servicios">Ver servicios</a>
-            </div>
-            <ul class="hero-points" aria-label="Ventajas">
-              <li>Consulta por WhatsApp</li>
-              <li>Precios transparentes</li>
-              <li>Servicio a domicilio</li>
-            </ul>
-          </div>
+      <section id="inicio" class="hero">
+        <div class="hero-image" role="img" aria-label="Foto de portada de KEREN's Hair">
+          <span>Foto de portada próximamente</span>
+        </div>
+        <div class="hero-content container">
+          <p class="eyebrow">KEREN'S HAIR</p>
+          <h1>Tu pelo.<br /><em>Tu estilo.</em></h1>
+          <a class="button button-gold" href="#reservar">Reservar ahora</a>
+        </div>
+      </section>
 
-          <div class="hero-card" aria-label="Resumen del proceso de reserva">
-            <div class="mini-steps">
-              <span><strong>1.</strong> Cuéntanos tu estilo</span>
-              <span><strong>2.</strong> Te damos precio</span>
-              <span><strong>3.</strong> Pagas depósito</span>
-              <span><strong>4.</strong> Confirmamos cita</span>
-            </div>
+      <section id="nosotros" class="section about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">Sobre KEREN'S HAIR</p>
+            <h2>Tu belleza, a tu manera.</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              En KEREN'S Hair creemos que tu pelo es una forma de expresarte. Creamos
+              trenzas y peinados con cuidado, técnica y atención a cada detalle.
+            </p>
+            <p>
+              Queremos que salgas sintiéndote tú misma: cómoda, segura y orgullosa de tu
+              estilo. Atendemos a mujeres, hombres y niños con una experiencia cercana y
+              personalizada.
+            </p>
           </div>
         </div>
       </section>
@@ -84,273 +63,166 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Servicios</p>
-            <h2>Peinados para cada momento y cada tipo de cabello.</h2>
+            <h2>Un estilo para cada persona.</h2>
+            <p>Elige tu categoría para descubrir los estilos disponibles, precios orientativos y tiempos de realización.</p>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card">
-              <h3>Wash & Go</h3>
-              <p>Lavado, seco y definición para un acabado natural con movimiento.</p>
-              <span>Desde €35</span>
-            </article>
-            <article class="service-card">
-              <h3>Trenzas</h3>
-              <p>Estilos protectores y elegantes, pensados para duración y comodidad.</p>
-              <span>Desde €45</span>
-            </article>
-            <article class="service-card">
-              <h3>Styling especial</h3>
-              <p>Diseños más elaborados para eventos, celebraciones o un look destacado.</p>
-              <span>Desde €60</span>
-            </article>
+          <div class="audience-grid">
+            <a class="audience-card" href="#mujeres">
+              <span class="audience-number">01</span>
+              <h3>Mujeres</h3>
+              <p>Trenzas, estilos protectores y looks para cada ocasión.</p>
+              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="audience-card" href="#hombres">
+              <span class="audience-number">02</span>
+              <h3>Hombres</h3>
+              <p>Diseños limpios, cómodos y pensados para tu día a día.</p>
+              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+            </a>
+            <a class="audience-card" href="#ninos">
+              <span class="audience-number">03</span>
+              <h3>Niños</h3>
+              <p>Peinados bonitos y prácticos en un ambiente tranquilo.</p>
+              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="portfolio" class="section portfolio">
+      <section id="portafolio" class="section portfolio">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Portafolio</p>
-            <h2>Trabajos reales de KEREN's Hair.</h2>
+            <h2>Encuentra tu próximo look.</h2>
+            <p>Toca cada estilo para conocer su duración aproximada y más detalles.</p>
           </div>
 
-          <div class="portfolio-grid" aria-label="Portafolio de trabajos">
-            <div class="portfolio-item placeholder">Próximamente</div>
-            <div class="portfolio-item placeholder">Próximamente</div>
-            <div class="portfolio-item placeholder">Próximamente</div>
-            <div class="portfolio-item placeholder">Próximamente</div>
-            <div class="portfolio-item placeholder">Próximamente</div>
-            <div class="portfolio-item placeholder">Próximamente</div>
+          <div class="portfolio-group" id="mujeres">
+            <div class="group-title">
+              <h3>Mujeres</h3>
+              <span>Estilos protectores y trenzas</span>
+            </div>
+            <div class="style-grid">
+              <button class="style-card" type="button" data-style="Box braids" data-duration="4–7 horas" data-description="Trenzas versátiles y duraderas, ideales para proteger tu cabello y cambiar de look.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Box braids</strong><small>Desde €45 · 4–7 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Knotless braids" data-duration="4–6 horas" data-description="Un acabado ligero y natural con menos tensión en la raíz.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Knotless braids</strong><small>Desde €55 · 4–6 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Cornrows" data-duration="2–4 horas" data-description="Diseños pegados y personalizados para un estilo definido y cómodo.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Cornrows</strong><small>Desde €35 · 2–4 h</small></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="portfolio-group" id="hombres">
+            <div class="group-title">
+              <h3>Hombres</h3>
+              <span>Diseños definidos y actuales</span>
+            </div>
+            <div class="style-grid">
+              <button class="style-card" type="button" data-style="Trenzas masculinas" data-duration="2–4 horas" data-description="Trenzas limpias y personalizadas para un look actual y duradero.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Trenzas masculinas</strong><small>Desde €35 · 2–4 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Diseño con líneas" data-duration="1–2 horas" data-description="Líneas y detalles definidos para completar tu estilo.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Diseño con líneas</strong><small>Desde €25 · 1–2 h</small></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="portfolio-group" id="ninos">
+            <div class="group-title">
+              <h3>Niños</h3>
+              <span>Peinados cómodos y divertidos</span>
+            </div>
+            <div class="style-grid">
+              <button class="style-card" type="button" data-style="Trenzas infantiles" data-duration="1–3 horas" data-description="Un look bonito y cómodo, adaptado a la edad y al ritmo de cada niño.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Trenzas infantiles</strong><small>Desde €25 · 1–3 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Coletas y diseños" data-duration="1–2 horas" data-description="Diseños sencillos y alegres para el colegio, celebraciones o cualquier día.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Coletas y diseños</strong><small>Desde €20 · 1–2 h</small></span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section process">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Cómo reservar</p>
-            <h2>Un proceso sencillo en 4 pasos.</h2>
+      <section class="mid-cta">
+        <div class="container cta-inner">
+          <div>
+            <p class="eyebrow">¿Ya encontraste tu estilo?</p>
+            <h2>Hablemos de tu próximo look.</h2>
           </div>
-
-          <div class="steps-grid">
-            <div class="step-card">
-              <div class="step-number">01</div>
-              <h3>Cuéntanos tu estilo</h3>
-              <p>Explica qué quieres, tu tipo de cabello y tus gustos.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">02</div>
-              <h3>Te damos el precio</h3>
-              <p>Neilis te confirma lo que cuesta antes de comprometerte.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">03</div>
-              <h3>Pagas el depósito</h3>
-              <p>Se realiza el 20% para reservar tu cita y asegurar la disponibilidad.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">04</div>
-              <h3>Confirmamos la cita</h3>
-              <p>Recibes la confirmación final y todo queda organizado.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section journey">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">El camino completo</p>
-            <h2>De principio a fin, una clienta sabe exactamente qué esperar.</h2>
-          </div>
-
-          <ol class="journey-list">
-            <li>Ve el post en Nextdoor/Facebook o llega por recomendación y entra a la web.</li>
-            <li>Lee servicios y precios y explora el catálogo de estilos.</li>
-            <li>Rellena el formulario de reserva con su estilo deseado.</li>
-            <li>Se abre WhatsApp con su mensaje ya escrito.</li>
-            <li>Neilis responde por WhatsApp con el precio exacto.</li>
-            <li>Neilis envía un link de pago de Revolut por el 20% de depósito.</li>
-            <li>La clienta paga y la cita queda confirmada.</li>
-            <li>El 80% restante se paga el día de la cita, cuando Neilis va a su casa.</li>
-          </ol>
+          <a class="button button-gold" href="#reservar">Reservar ahora</a>
         </div>
       </section>
 
       <section id="reservar" class="section booking">
         <div class="container booking-layout">
           <div class="booking-copy">
-            <p class="eyebrow">Reserva</p>
-            <h2>Cuéntanos tu estilo y te ayudamos a organizar tu cita.</h2>
-            <p>
-              Toda reserva empieza por WhatsApp para confirmar el precio exacto. Aquí
-              solo recogemos la información para que la consulta sea rápida y clara.
-            </p>
+            <p class="eyebrow">Reserva tu cita</p>
+            <h2>Cuéntanos qué tienes en mente.</h2>
+            <p>Completa el formulario y se abrirá WhatsApp con todos tus datos. Neilis te responderá con el precio exacto y la disponibilidad.</p>
+            <p class="booking-note"><strong>Depósito:</strong> la cita se confirma con un depósito del 20%, enviado por un enlace de Revolut después de confirmar el precio.</p>
           </div>
 
           <form id="booking-form" class="booking-form" novalidate>
             <div class="field-row two-cols">
-              <label>
-                Nombre
-                <input type="text" name="nombre" placeholder="Tu nombre" required />
-              </label>
-              <label>
-                WhatsApp
-                <input type="tel" name="whatsapp" placeholder="+34 600 000 000" required />
-              </label>
+              <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" required /></label>
+              <label>WhatsApp<input type="tel" name="whatsapp" placeholder="+34 600 000 000" required /></label>
             </div>
-
             <div class="field-row two-cols">
-              <label>
-                Tipo de cabello
-                <input type="text" name="tipoCabello" placeholder="Liso, rizado, afro..." required />
-              </label>
-              <label>
-                Largo de cabello
-                <input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required />
-              </label>
+              <label>Tipo de cabello<input type="text" name="tipoCabello" placeholder="Liso, rizado, afro..." required /></label>
+              <label>Largo de cabello<input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required /></label>
             </div>
-
-            <label>
-              Estilo que deseas
-              <textarea name="estilo" rows="4" placeholder="Describe el look que te gustaría..." required></textarea>
-            </label>
-
-            <label>
-              Fecha preferida
-              <input type="date" name="fecha" required />
-            </label>
-
-            <label class="upload-field">
-              Foto de referencia (opcional)
-              <input type="file" name="fotoReferencia" accept="image/*" />
-            </label>
-
+            <label>Estilo que deseas<textarea name="estilo" rows="4" placeholder="Describe el look que te gustaría..." required></textarea></label>
+            <label>Fecha preferida<input type="date" name="fecha" required /></label>
+            <label class="upload-field">Foto de referencia (opcional)<input type="file" name="fotoReferencia" accept="image/*" /></label>
             <div class="checkbox-group">
-              <label class="checkbox-wrap">
-                <input type="checkbox" name="usoFoto" />
-                <span>Acepto que se pueda usar mi foto en el portafolio.</span>
-              </label>
-
-              <label class="checkbox-wrap">
-                <input type="checkbox" name="menor" />
-                <span>Esta reserva es para un menor.</span>
-              </label>
+              <label class="checkbox-wrap"><input type="checkbox" name="usoFoto" /><span>Acepto que se pueda usar mi foto en el portafolio.</span></label>
+              <label class="checkbox-wrap"><input type="checkbox" name="menor" /><span>Esta reserva es para un menor.</span></label>
             </div>
-
-            <button type="submit" class="button button-primary submit-button">
-              Enviar reserva por WhatsApp
-            </button>
+            <button type="submit" class="button button-navy submit-button">Enviar reserva por WhatsApp</button>
           </form>
         </div>
       </section>
 
-      <section class="section policy" id="politica">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Política</p>
-            <h2>Reservas, pagos y cancelaciones.</h2>
-          </div>
-
-          <div class="policy-grid">
-            <article>
-              <h3>Depósito del 20%</h3>
-              <p>
-                Para confirmar la cita, se paga un depósito del 20% del total. Ese importe
-                señala la reserva y asegura la disponibilidad acordada.
-              </p>
-            </article>
-            <article>
-              <h3>Cambio de fecha</h3>
-              <p>
-                Si necesitas cambiar la fecha, se debe avisar con antelación y se reubica la
-                cita según disponibilidad. El cambio se gestiona por WhatsApp.
-              </p>
-            </article>
-            <article>
-              <h3>Si cancela la clienta</h3>
-              <p>
-                Si la reserva se cancela por parte de la clienta, el depósito no se devuelve,
-                salvo que se acuerde otra solución directamente con Neilis.
-              </p>
-            </article>
-            <article>
-              <h3>Si cancela Neilis</h3>
-              <p>
-                Si la cita se cancela por motivos de Neilis, se devolverá el depósito en la
-                misma forma o se reprogramará la cita sin coste adicional.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section not-included">
-        <div class="container narrow">
-          <div class="section-heading">
-            <p class="eyebrow">Primera versión</p>
-            <h2>Qué NO incluye esta web por ahora.</h2>
-          </div>
-
-          <ul class="feature-list">
-            <li>No tiene calendario en tiempo real con horarios bloqueados automáticamente; el horario se acuerda por WhatsApp.</li>
-            <li>No cobra el depósito directamente en la web; el link de pago se envía manualmente.</li>
-            <li>No lleva el registro del programa de referidos de forma automática; lo lleva Neilis a mano.</li>
-            <li>No tiene panel de administración; los precios y textos se editan directamente en el código cuando haga falta.</li>
-          </ul>
-          <p class="intentional-note">
-            Esto es intencional: es mejor lanzar con una versión simple, validar que el negocio funciona con clientas reales y automatizar más adelante solo lo que haga falta.
-          </p>
-        </div>
-      </section>
-
-      <section id="referidos" class="section referrals">
-        <div class="container narrow">
-          <div class="section-heading">
-            <p class="eyebrow">Programa de referidos</p>
-            <h2>Invita a más clientas y gana un detalle especial.</h2>
-          </div>
-
-          <p class="referral-copy">
-            Cada 3 personas nuevas referidas y pagadas reciben una tarjeta de regalo por un peinado sencillo gratis.
-          </p>
+      <section class="final-cta">
+        <div class="container final-cta-inner">
+          <p class="eyebrow">Tu pelo. Tu estilo. Tu momento.</p>
+          <h2>Lista para reservar?</h2>
+          <a class="button button-gold" href="#reservar">Reservar ahora</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <div class="footer-brand">
-          <div class="brand" aria-label="Logo de KEREN's Hair">
-            <div class="brand-mark">KH</div>
-            <div>
-              <p class="brand-name">KEREN'S HAIR</p>
-              <p class="brand-tag">Estilo personal, cuidado real.</p>
-            </div>
-          </div>
+        <div>
+          <a class="brand footer-brand" href="#inicio"><span class="brand-mark">KH</span><span class="brand-name">KEREN'S HAIR</span></a>
+          <p class="footer-tag">Tu pelo, tu estilo.</p>
         </div>
-
-        <div class="footer-links">
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
-          <a href="https://nextdoor.com" target="_blank" rel="noreferrer">Nextdoor</a>
-        </div>
-
-        <div class="lang-block">
-          <label class="language-switch footer-lang" aria-label="Selector de idioma del footer">
-            <span>ES</span>
-            <select aria-label="Idioma del pie de página">
-              <option value="es" selected>ES</option>
-              <option value="en">EN</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="legal-links">
-          <a href="#">Privacidad</a>
-          <a href="#">Políticas</a>
-        </div>
+        <div class="footer-links"><a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a><a href="https://nextdoor.com" target="_blank" rel="noreferrer">Nextdoor</a></div>
+        <div class="legal-links"><a href="#">Privacidad</a><a href="#">Políticas</a></div>
       </div>
     </footer>
+
+    <dialog id="style-dialog" class="style-dialog">
+      <button class="dialog-close" type="button" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Detalle del estilo</p>
+      <h2 id="dialog-title">Estilo</h2>
+      <p id="dialog-description"></p>
+      <p class="dialog-duration"><strong>Duración aproximada:</strong> <span id="dialog-duration"></span></p>
+      <a class="button button-gold" href="#reservar">Reservar este estilo</a>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

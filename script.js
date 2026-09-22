@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('booking-form');
+  const dialog = document.getElementById('style-dialog');
+  const dialogTitle = document.getElementById('dialog-title');
+  const dialogDescription = document.getElementById('dialog-description');
+  const dialogDuration = document.getElementById('dialog-duration');
+  const closeDialog = document.querySelector('.dialog-close');
+
+  document.querySelectorAll('.style-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      dialogTitle.textContent = card.dataset.style;
+      dialogDescription.textContent = card.dataset.description;
+      dialogDuration.textContent = card.dataset.duration;
+      dialog.showModal();
+    });
+  });
+
+  closeDialog?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
 
   if (!form) {
     return;
