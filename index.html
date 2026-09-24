@@ -23,14 +23,22 @@
           <a href="#portafolio">Portafolio</a>
           <a href="#reservar">Reservar</a>
         </nav>
-        <a class="button button-gold header-cta" href="#reservar">Reservar ahora</a>
+        <div class="header-actions">
+          <label class="language-switch" aria-label="Selector de idioma">
+            <select aria-label="Idioma">
+              <option value="nl">NL</option>
+              <option value="es" selected>ES</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
+          <a class="button button-gold header-cta" href="#reservar">Reservar ahora</a>
+        </div>
       </div>
     </header>
 
     <main>
       <section id="inicio" class="hero">
         <div class="hero-image" role="img" aria-label="Clientes de KEREN's Hair con distintos estilos de trenzas">
-          <span>KEREN'S HAIR</span>
         </div>
         <div class="hero-content container">
           <p class="eyebrow">KEREN'S HAIR</p>
@@ -51,9 +59,8 @@
               trenzas y peinados con cuidado, técnica y atención a cada detalle.
             </p>
             <p>
-              Queremos que salgas sintiéndote tú misma: cómoda, segura y orgullosa de tu
-              estilo. Atendemos a mujeres, hombres y niños con una experiencia cercana y
-              personalizada.
+              Queremos que salgas sintiéndote cómod@, segur@ y orgullos@ de tu estilo.
+              Atendemos a mujeres, hombres y niñ@s con una experiencia cercana y personalizada.
             </p>
           </div>
         </div>
@@ -180,10 +187,48 @@
               <label>WhatsApp<input type="tel" name="whatsapp" placeholder="+34 600 000 000" required /></label>
             </div>
             <div class="field-row two-cols">
-              <label>Tipo de cabello<input type="text" name="tipoCabello" placeholder="Liso, rizado, afro..." required /></label>
+              <label>
+                Tipo de cabello
+                <select name="tipoCabello" required>
+                  <option value="" selected disabled>Selecciona una categoría</option>
+                  <option value="1A - Liso muy fino">1A - Liso muy fino</option>
+                  <option value="1B - Liso">1B - Liso</option>
+                  <option value="1C - Liso grueso">1C - Liso grueso</option>
+                  <option value="2A - Ondas suaves">2A - Ondas suaves</option>
+                  <option value="2B - Ondas definidas">2B - Ondas definidas</option>
+                  <option value="2C - Ondas marcadas">2C - Ondas marcadas</option>
+                  <option value="3A - Rizo suelto">3A - Rizo suelto</option>
+                  <option value="3B - Rizo medio">3B - Rizo medio</option>
+                  <option value="3C - Rizo cerrado">3C - Rizo cerrado</option>
+                  <option value="4A - Afro definido">4A - Afro definido</option>
+                  <option value="4B - Afro en zigzag">4B - Afro en zigzag</option>
+                  <option value="4C - Afro muy cerrado">4C - Afro muy cerrado</option>
+                  <option value="No estoy segur@">No estoy segur@</option>
+                </select>
+              </label>
               <label>Largo de cabello<input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required /></label>
             </div>
-            <label>Estilo que deseas<textarea name="estilo" rows="4" placeholder="Describe el look que te gustaría..." required></textarea></label>
+            <label>
+              Estilo de trenzas que deseas
+              <select name="estilo" required>
+                <option value="" selected disabled>Selecciona un estilo</option>
+                <option value="Box braids">Box braids</option>
+                <option value="Knotless braids">Knotless braids</option>
+                <option value="Cornrows">Cornrows</option>
+                <option value="Feed-in braids">Feed-in braids</option>
+                <option value="Fulani braids">Fulani braids</option>
+                <option value="Goddess braids">Goddess braids</option>
+                <option value="Boho braids">Boho braids</option>
+                <option value="Trenzas africanas">Trenzas africanas</option>
+                <option value="Trenzas con extensiones">Trenzas con extensiones</option>
+                <option value="Twists">Twists</option>
+                <option value="Passion twists">Passion twists</option>
+                <option value="Senegalese twists">Senegalese twists</option>
+                <option value="Trenzas infantiles">Trenzas infantiles</option>
+                <option value="Diseño personalizado">Diseño personalizado</option>
+              </select>
+            </label>
+            <label>Detalles o referencia<textarea name="detallesEstilo" rows="4" placeholder="Largo, color, diseño o cualquier detalle..." required></textarea></label>
             <label>Fecha preferida<input type="date" name="fecha" required /></label>
             <label class="upload-field">Foto de referencia (opcional)<input type="file" name="fotoReferencia" accept="image/*" /></label>
             <div class="checkbox-group">

@@ -35,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const tipoCabello = (formData.get('tipoCabello') || '').toString().trim();
     const largoCabello = (formData.get('largoCabello') || '').toString().trim();
     const estilo = (formData.get('estilo') || '').toString().trim();
+    const detallesEstilo = (formData.get('detallesEstilo') || '').toString().trim();
     const fecha = (formData.get('fecha') || '').toString().trim();
     const usoFoto = formData.get('usoFoto') === 'on';
     const menor = formData.get('menor') === 'on';
 
-    if (!nombre || !whatsapp || !tipoCabello || !largoCabello || !estilo || !fecha) {
+    if (!nombre || !whatsapp || !tipoCabello || !largoCabello || !estilo || !detallesEstilo || !fecha) {
       alert('Por favor, completa todos los campos obligatorios antes de enviar tu reserva.');
       return;
     }
@@ -60,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `Tipo de cabello: ${tipoCabello}`,
       `Largo de cabello: ${largoCabello}`,
       `Estilo deseado: ${estilo}`,
+      `Detalles del estilo: ${detallesEstilo}`,
       `Fecha preferida: ${formattedDate}`,
       `Uso de foto en portafolio: ${photoStatus}`,
       `Reserva para un menor: ${childStatus}`

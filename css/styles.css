@@ -32,12 +32,14 @@ p { color: var(--muted); }
 .brand-name { color: var(--navy); font-size: .85rem; letter-spacing: .13em; }
 .nav { display: flex; gap: 1.8rem; color: var(--muted); font-size: .92rem; }
 .nav a:hover, .footer-links a:hover, .legal-links a:hover { color: var(--gold); }
-.button { display: inline-flex; align-items: center; justify-content: center; padding: .95rem 1.5rem; border-radius: 2px; border: 1px solid transparent; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+.header-actions { display: flex; align-items: center; gap: .8rem; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: .95rem 1.5rem; border-radius: 999px; border: 1px solid transparent; font-weight: 700; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
 .button:hover { transform: translateY(-2px); }
-.button-gold { background: var(--gold); color: var(--navy); }
+.button-gold { background: var(--gold); color: var(--navy); box-shadow: 0 8px 18px rgba(201,163,78,.2); }
 .button-gold:hover { background: var(--gold-light); }
-.button-navy { background: var(--navy); color: var(--white); }
+.button-navy { background: var(--navy); color: var(--white); box-shadow: 0 8px 18px rgba(7,27,58,.18); }
 .header-cta { padding: .7rem 1.1rem; font-size: .88rem; }
+.language-switch select { width: auto; padding: .5rem .25rem; border: 0; background: transparent; color: var(--navy); font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; }
 
 .hero { min-height: min(760px, calc(100vh - 78px)); position: relative; display: grid; align-items: center; overflow: hidden; background: var(--navy); }
 .hero-image { position: absolute; inset: 0 0 0 43%; display: grid; place-items: center; background: linear-gradient(90deg, rgba(7,27,58,.2), rgba(7,27,58,0) 35%), url("../assets/images/hero/hero-keren-hair.jpg") center center / cover no-repeat; color: rgba(255,255,255,.85); letter-spacing: .08em; text-transform: uppercase; font-size: .75rem; }
@@ -90,8 +92,8 @@ p { color: var(--muted); }
 .field-row { display: grid; gap: 1rem; }
 .two-cols { grid-template-columns: repeat(2, 1fr); }
 label { display: grid; gap: .45rem; margin-bottom: 1rem; color: var(--black); font-weight: 600; }
-input, textarea { width: 100%; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: var(--white); color: var(--black); }
-input:focus, textarea:focus { outline: 2px solid rgba(201,163,78,.35); border-color: var(--gold); }
+input, textarea, label select { width: 100%; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--white); color: var(--black); }
+input:focus, textarea:focus, label select:focus { outline: 2px solid rgba(201,163,78,.35); border-color: var(--gold); }
 textarea { resize: vertical; min-height: 120px; }
 .upload-field input { padding: .7rem; }
 .checkbox-group { display: grid; gap: .75rem; margin: 1rem 0 1.5rem; }
