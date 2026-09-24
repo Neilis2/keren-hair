@@ -32,6 +32,7 @@ Landing page para KEREN'S Hair, con servicio a domicilio, proceso de reserva y f
 - `js/script.js`: lógica del formulario y apertura de WhatsApp.
 - `assets/images/hero/`: imágenes de portada.
 - `assets/images/brand/`: logo y recursos de marca.
+- `assets/images/brand/keren-hair-logo.jpg`: logo oficial proporcionado para encabezado y footer.
 - `assets/images/portfolio/mujeres/`: estilos y trabajos para mujeres.
 - `assets/images/portfolio/hombres/`: estilos y trabajos para hombres.
 - `assets/images/portfolio/ninos/`: estilos y trabajos para niños.

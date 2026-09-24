@@ -28,6 +28,7 @@ p { color: var(--muted); }
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
 .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; }
+.brand-logo { width: 190px; height: 52px; display: block; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
 .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--navy); color: var(--gold); font-size: .8rem; font-weight: 800; }
 .brand-name { color: var(--navy); font-size: .85rem; letter-spacing: .13em; }
 .nav { display: flex; gap: 1.8rem; color: var(--muted); font-size: .92rem; }
@@ -107,7 +108,7 @@ textarea { resize: vertical; min-height: 120px; }
 .final-cta .eyebrow { color: var(--gold-light); }
 .site-footer { padding: 2.5rem 0; background: var(--white); border-top: 1px solid var(--line); }
 .footer-wrap { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; align-items: center; }
-.footer-brand .brand-name { color: var(--navy); }
+.footer-brand .brand-logo { width: 230px; height: 64px; }
 .footer-tag { margin: .7rem 0 0; font-size: .85rem; }
 .footer-links, .legal-links { display: flex; flex-wrap: wrap; gap: 1.2rem; color: var(--muted); font-size: .9rem; }
 
@@ -127,6 +128,7 @@ textarea { resize: vertical; min-height: 120px; }
   .style-image { min-height: 150px; }
   .cta-inner { align-items: flex-start; flex-direction: column; }
   .footer-wrap { grid-template-columns: 1fr; }
+  .brand-logo { width: 165px; height: 46px; }
 }
 
 @media (max-width: 520px) {
