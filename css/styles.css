@@ -25,7 +25,7 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.2rem); letter-spacing: -.04em; }
 h3 { font-size: 2rem; }
 p { color: var(--muted); }
 
-.site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.site-header { position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid var(--line); }
 .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; }
 .brand-logo { width: 190px; height: 52px; display: block; object-fit: cover; object-position: center; mix-blend-mode: multiply; }
