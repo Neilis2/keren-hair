@@ -57,7 +57,8 @@ const translations = {
     hairLengthLabel: "Largo de cabello", hairLengthPlaceholder: "Corto, medio, largo...",
     styleLabel: "Estilo de trenzas que deseas", detailsLabel: "Detalles o referencia",
     detailsPlaceholder: "Largo, color, diseño o cualquier detalle...",
-    dateLabel: "Fecha preferida", referencePhotoLabel: "Foto de referencia (obligatoria para niños)",
+    dateLabel: "Fecha preferida", referencePhotoLabel: "Foto de referencia (opcional)",
+    referencePhotoRequired: "Foto de referencia (obligatoria para niños)",
     photoConsent: "Acepto que se pueda usar mi foto en el portafolio.",
     minorLabel: "Esta reserva es para un menor.",
     submitButton: "Enviar reserva por WhatsApp", finalTagline: "Tu pelo. Tu estilo. Tu momento.",
@@ -131,7 +132,8 @@ const translations = {
     hairLengthLabel: "Haarlengte", hairLengthPlaceholder: "Kort, halflang, lang...",
     styleLabel: "Gewenste vlechtstijl", detailsLabel: "Details of voorbeeld",
     detailsPlaceholder: "Lengte, kleur, ontwerp of andere details...",
-    dateLabel: "Gewenste datum", referencePhotoLabel: "Referentiefoto (verplicht voor kinderen)",
+    dateLabel: "Gewenste datum", referencePhotoLabel: "Referentiefoto (optioneel)",
+    referencePhotoRequired: "Referentiefoto (verplicht voor kinderen)",
     photoConsent: "Ik geef toestemming om mijn foto in het portfolio te gebruiken.",
     minorLabel: "Deze afspraak is voor een minderjarige.",
     submitButton: "Afspraak via WhatsApp versturen", finalTagline: "Jouw haar. Jouw stijl. Jouw moment.",
@@ -205,7 +207,8 @@ const translations = {
     hairLengthLabel: "Hair length", hairLengthPlaceholder: "Short, medium, long...",
     styleLabel: "Desired braid style", detailsLabel: "Details or reference",
     detailsPlaceholder: "Length, color, design, or any other details...",
-    dateLabel: "Preferred date", referencePhotoLabel: "Reference photo (required for children)",
+    dateLabel: "Preferred date", referencePhotoLabel: "Reference photo (optional)",
+    referencePhotoRequired: "Reference photo (required for children)",
     photoConsent: "I agree that my photo may be used in the portfolio.",
     minorLabel: "This appointment is for a child.",
     submitButton: "Send booking request via WhatsApp", finalTagline: "Your hair. Your style. Your moment.",
@@ -285,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function populateStyleOptions(previousValue = '') {
     if (!styleSelect || !stylePlaceholder) return;
     styleSelect.replaceChildren(stylePlaceholder);
+    stylePlaceholder.textContent = text(genderSelect?.value ? 'selectOption' : 'selectStyleFirst');
     stylePlaceholder.selected = true;
     if (!genderSelect?.value) return;
 
@@ -306,6 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const needsReference = genderSelect?.value === 'child';
     referenceField?.classList.toggle('is-required', needsReference);
     if (referenceInput) referenceInput.required = needsReference;
+    const referenceLabel = referenceField?.querySelector('[data-i18n="referencePhotoLabel"]');
+    if (referenceLabel) referenceLabel.textContent = text(needsReference ? 'referencePhotoRequired' : 'referencePhotoLabel');
   };
 
   const getSelectedText = (name) => {
