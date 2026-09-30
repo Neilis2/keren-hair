@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KEREN's Hair | Tu pelo, tu estilo</title>
-    <meta name="description" content="KEREN's Hair: trenzas y peinados para mujeres, hombres y niños." />
+    <title data-i18n="pageTitle">KEREN's Hair | Tu pelo, tu estilo</title>
+    <meta name="description" content="KEREN's Hair: trenzas y peinados para mujeres, hombres y niños." data-i18n-attr="content:metaDescription" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -13,11 +13,11 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="#inicio" aria-label="KEREN's Hair, inicio">
+        <a class="brand" href="#inicio" aria-label="KEREN's Hair, inicio" data-i18n-aria-label="homeLabel">
           <img class="brand-logo" src="assets/images/brand/keren-hair-logo.jpg" alt="Keren's Hair Professional Hair Styling" />
         </a>
 
-        <nav class="nav" aria-label="Navegación principal">
+        <nav class="nav" aria-label="Navegación principal" data-i18n-aria-label="mainNavigation">
           <a href="#nosotros" data-i18n="navAbout">Nosotros</a>
           <a href="#servicios" data-i18n="navServices">Servicios</a>
           <a href="#portafolio" data-i18n="navPortfolio">Portafolio</a>
@@ -25,8 +25,8 @@
         </nav>
 
         <div class="header-actions">
-          <label class="language-switch" aria-label="Selector de idioma">
-            <select id="language-select" aria-label="Idioma">
+          <label class="language-switch" aria-label="Selector de idioma" data-i18n-aria-label="languageSelector">
+            <select id="language-select" aria-label="Idioma" data-i18n-aria-label="languageLabel">
               <option value="nl">NL</option>
               <option value="es" selected>ES</option>
               <option value="en">EN</option>
@@ -39,7 +39,7 @@
 
     <main>
       <section id="inicio" class="hero">
-        <div class="hero-image" role="img" aria-label="Clientes de KEREN's Hair con distintos estilos de trenzas"></div>
+        <div class="hero-image" role="img" aria-label="Clientes de KEREN's Hair con distintos estilos de trenzas" data-i18n-aria-label="heroImageLabel"></div>
         <div class="hero-content container">
           <p class="eyebrow">KEREN'S HAIR</p>
           <h1>
@@ -75,17 +75,17 @@
             <a class="audience-card" href="#mujeres">
               <h3 data-i18n="womenLabel">Mujeres</h3>
               <p data-i18n="womenDesc">Trenzas, estilos protectores y looks para cada ocasión.</p>
-              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
+              <span class="card-link"><span data-i18n="viewStyles">Ver estilos</span> <span aria-hidden="true">→</span></span>
             </a>
             <a class="audience-card" href="#hombres">
               <h3 data-i18n="menLabel">Hombres</h3>
               <p data-i18n="menDesc">Diseños limpios, cómodos y pensados para tu día a día.</p>
-              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
+              <span class="card-link"><span data-i18n="viewStyles">Ver estilos</span> <span aria-hidden="true">→</span></span>
             </a>
             <a class="audience-card" href="#ninos">
               <h3 data-i18n="kidsLabel">Niños</h3>
               <p data-i18n="kidsDesc">Peinados bonitos y prácticos en un ambiente tranquilo.</p>
-              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
+              <span class="card-link"><span data-i18n="viewStyles">Ver estilos</span> <span aria-hidden="true">→</span></span>
             </a>
           </div>
         </div>
@@ -99,72 +99,72 @@
             <p data-i18n="portfolioText">Toca cada estilo para conocer su duración aproximada y más detalles.</p>
           </div>
 
-          <div class="portfolio-group" id="mujeres">
+          <div class="portfolio-group" id="mujeres" data-audience="woman">
             <div class="group-title">
               <h3 data-i18n="womenLabel">Mujeres</h3>
               <span data-i18n="womenStyles">Estilos protectores y trenzas</span>
             </div>
             <div class="style-grid">
-              <button class="style-card" type="button" data-style="Box braids" data-duration="4–7 horas" data-description="Trenzas versátiles y duraderas, ideales para proteger tu cabello y cambiar de look.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Box braids</strong><small>Desde €45 · 4–7 h</small></span>
+              <button class="style-card" type="button" data-style="Box braids" data-duration-key="boxDuration" data-description-key="boxDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Box braids</strong><small data-i18n="womenBoxPrice">Desde €45 · 4–7 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Knotless braids" data-duration="4–6 horas" data-description="Un acabado ligero y natural con menos tensión en la raíz.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Knotless braids</strong><small>Desde €55 · 4–6 h</small></span>
+              <button class="style-card" type="button" data-style="Knotless braids" data-duration-key="knotlessDuration" data-description-key="knotlessDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Knotless braids</strong><small data-i18n="womenKnotlessPrice">Desde €55 · 4–6 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Cornrows" data-duration="2–4 horas" data-description="Diseños pegados y personalizados para un estilo definido y cómodo.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Cornrows</strong><small>Desde €35 · 2–4 h</small></span>
+              <button class="style-card" type="button" data-style="Cornrows" data-duration-key="shortDuration" data-description-key="womenCornrowsDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Cornrows</strong><small data-i18n="womenCornrowsPrice">Desde €35 · 2–4 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Fulani braids" data-duration="3–5 horas" data-description="Trenzas laterales con un estilo elegante y sofisticado.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Fulani braids</strong><small>Desde €50 · 3–5 h</small></span>
+              <button class="style-card" type="button" data-style="Fulani braids" data-duration-key="mediumDuration" data-description-key="fulaniDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Fulani braids</strong><small data-i18n="womenFulaniPrice">Desde €50 · 3–5 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Goddess braids" data-duration="3–5 horas" data-description="Trenzas gruesas y voluminosas para un look divino y llamativo.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Goddess braids</strong><small>Desde €50 · 3–5 h</small></span>
+              <button class="style-card" type="button" data-style="Goddess braids" data-duration-key="mediumDuration" data-description-key="goddessDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Goddess braids</strong><small data-i18n="womenGoddessPrice">Desde €50 · 3–5 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Feed-in braids" data-duration="4–7 horas" data-description="Trenzas con extensiones incorporadas gradualmente para un look natural.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Feed-in braids</strong><small>Desde €55 · 4–7 h</small></span>
+              <button class="style-card" type="button" data-style="Feed-in braids" data-duration-key="boxDuration" data-description-key="feedInDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Feed-in braids</strong><small data-i18n="womenFeedInPrice">Desde €55 · 4–7 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Boho braids" data-duration="3–5 horas" data-description="Trenzas bohemias con un toque relajado y desenfadado.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Boho braids</strong><small>Desde €45 · 3–5 h</small></span>
+              <button class="style-card" type="button" data-style="Boho braids" data-duration-key="mediumDuration" data-description-key="bohoDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Boho braids</strong><small data-i18n="womenBohoPrice">Desde €45 · 3–5 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Twists" data-duration="3–5 horas" data-description="Twists suaves y elegantes para un estilo versátil y cómodo.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Twists</strong><small>Desde €40 · 3–5 h</small></span>
+              <button class="style-card" type="button" data-style="Twists" data-duration-key="mediumDuration" data-description-key="twistsDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Twists</strong><small data-i18n="womenTwistsPrice">Desde €40 · 3–5 h</small></span>
               </button>
             </div>
           </div>
 
-          <div class="portfolio-group" id="hombres">
+          <div class="portfolio-group" id="hombres" data-audience="man">
             <div class="group-title">
               <h3 data-i18n="menLabel">Hombres</h3>
               <span data-i18n="menStyles">Diseños definidos y actuales</span>
             </div>
             <div class="style-grid">
-              <button class="style-card" type="button" data-style="Cornrows" data-duration="2–4 horas" data-description="Trenzas limpias y personalizadas para un look actual y duradero.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Cornrows</strong><small>Desde €35 · 2–4 h</small></span>
+              <button class="style-card" type="button" data-style="Cornrows" data-duration-key="shortDuration" data-description-key="menCornrowsDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Cornrows</strong><small data-i18n="menCornrowsPrice">Desde €35 · 2–4 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Box braids" data-duration="2–4 horas" data-description="Trenzas cuadradas y definidas con un estilo moderno y personalizable.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Box braids</strong><small>Desde €40 · 2–4 h</small></span>
+              <button class="style-card" type="button" data-style="Box braids" data-duration-key="shortDuration" data-description-key="menBoxDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
+                <span class="style-info"><strong>Box braids</strong><small data-i18n="menBoxPrice">Desde €40 · 2–4 h</small></span>
               </button>
             </div>
           </div>
 
-          <div class="portfolio-group" id="ninos">
+          <div class="portfolio-group" id="ninos" data-audience="child">
             <div class="group-title">
               <h3 data-i18n="kidsLabel">Niños</h3>
               <span data-i18n="kidsStyles">Peinados cómodos y divertidos</span>
             </div>
             <div class="style-grid">
-              <button class="style-card" type="button" data-style="Imagen de referencia" data-duration="Personalizado" data-description="Envía una imagen de referencia del peinado que deseas para tu hijo/a. Nos encargaremos de adaptarlo a su comodidad.">
-                <span class="style-image">Foto próximamente</span>
+              <button class="style-card" type="button" data-style-key="kidsReference" data-duration-key="customDuration" data-description-key="kidsDescription">
+                <span class="style-image" data-i18n="photoComing">Foto próximamente</span>
                 <span class="style-info"><strong data-i18n="kidsReference">Imagen de referencia</strong><small data-i18n="kidsReferenceDesc">Personalizado</small></span>
               </button>
             </div>
@@ -195,7 +195,7 @@
             <div class="field-row two-cols">
               <label>
                 <span class="label-text" data-i18n="nameLabel">Nombre</span>
-                <input type="text" name="nombre" placeholder="Tu nombre" required />
+                <input type="text" name="nombre" placeholder="Tu nombre" data-i18n-placeholder="namePlaceholder" required />
               </label>
               <label>
                 <span class="label-text" data-i18n="whatsappLabel">WhatsApp</span>
@@ -208,9 +208,9 @@
                 <span class="label-text" data-i18n="genderLabel">Género</span>
                 <select id="gender-select" name="genero" required>
                   <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
-                  <option value="mujer" data-i18n="womanOption">Mujer</option>
-                  <option value="hombre" data-i18n="manOption">Hombre</option>
-                  <option value="nino" data-i18n="childOption">Niño/a</option>
+                  <option value="woman" data-i18n="womanOption">Mujer</option>
+                  <option value="man" data-i18n="manOption">Hombre</option>
+                  <option value="child" data-i18n="childOption">Niño/a</option>
                 </select>
               </label>
 
@@ -218,26 +218,26 @@
                 <span class="label-text" data-i18n="hairTypeLabel">Tipo de cabello</span>
                 <select name="tipoCabello" required>
                   <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
-                  <option value="1A - Liso muy fino">1A - Liso muy fino</option>
-                  <option value="1B - Liso">1B - Liso</option>
-                  <option value="1C - Liso grueso">1C - Liso grueso</option>
-                  <option value="2A - Ondas suaves">2A - Ondas suaves</option>
-                  <option value="2B - Ondas definidas">2B - Ondas definidas</option>
-                  <option value="2C - Ondas marcadas">2C - Ondas marcadas</option>
-                  <option value="3A - Rizo suelto">3A - Rizo suelto</option>
-                  <option value="3B - Rizo medio">3B - Rizo medio</option>
-                  <option value="3C - Rizo cerrado">3C - Rizo cerrado</option>
-                  <option value="4A - Afro definido">4A - Afro definido</option>
-                  <option value="4B - Afro en zigzag">4B - Afro en zigzag</option>
-                  <option value="4C - Afro muy cerrado">4C - Afro muy cerrado</option>
-                  <option value="No estoy segur@" data-i18n="notSure">No estoy segur@</option>
+                  <option value="1A" data-i18n="hair1a">1A - Liso muy fino</option>
+                  <option value="1B" data-i18n="hair1b">1B - Liso</option>
+                  <option value="1C" data-i18n="hair1c">1C - Liso grueso</option>
+                  <option value="2A" data-i18n="hair2a">2A - Ondas suaves</option>
+                  <option value="2B" data-i18n="hair2b">2B - Ondas definidas</option>
+                  <option value="2C" data-i18n="hair2c">2C - Ondas marcadas</option>
+                  <option value="3A" data-i18n="hair3a">3A - Rizo suelto</option>
+                  <option value="3B" data-i18n="hair3b">3B - Rizo medio</option>
+                  <option value="3C" data-i18n="hair3c">3C - Rizo cerrado</option>
+                  <option value="4A" data-i18n="hair4a">4A - Afro definido</option>
+                  <option value="4B" data-i18n="hair4b">4B - Afro en zigzag</option>
+                  <option value="4C" data-i18n="hair4c">4C - Afro muy cerrado</option>
+                  <option value="not-sure" data-i18n="notSure">No estoy segur@</option>
                 </select>
               </label>
             </div>
 
             <label>
               <span class="label-text" data-i18n="hairLengthLabel">Largo de cabello</span>
-              <input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required />
+              <input type="text" name="largoCabello" placeholder="Corto, medio, largo..." data-i18n-placeholder="hairLengthPlaceholder" required />
             </label>
 
             <label>
@@ -249,7 +249,7 @@
 
             <label>
               <span class="label-text" data-i18n="detailsLabel">Detalles o referencia</span>
-              <textarea name="detallesEstilo" rows="4" placeholder="Largo, color, diseño o cualquier detalle..." required></textarea>
+              <textarea name="detallesEstilo" rows="4" placeholder="Largo, color, diseño o cualquier detalle..." data-i18n-placeholder="detailsPlaceholder" required></textarea>
             </label>
 
             <label>
@@ -309,7 +309,7 @@
     </footer>
 
     <dialog id="style-dialog" class="style-dialog">
-      <button class="dialog-close" type="button" aria-label="Cerrar">×</button>
+      <button class="dialog-close" type="button" aria-label="Cerrar" data-i18n-aria-label="closeDialog">×</button>
       <p class="eyebrow" data-i18n="styleDetail">Detalle del estilo</p>
       <h2 id="dialog-title">Estilo</h2>
       <p id="dialog-description"></p>
