@@ -275,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (metaDescription) metaDescription.content = text('metaDescription');
     if (activeCard) showStyleDetails(activeCard);
     populateStyleOptions(styleSelect?.value);
+    updateReferenceRequirement();
   };
 
   const getStyleName = (card) => text(card.dataset.styleKey) || card.dataset.style;
