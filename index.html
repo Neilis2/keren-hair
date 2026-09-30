@@ -16,51 +16,49 @@
         <a class="brand" href="#inicio" aria-label="KEREN's Hair, inicio">
           <img class="brand-logo" src="assets/images/brand/keren-hair-logo.jpg" alt="Keren's Hair Professional Hair Styling" />
         </a>
+
         <nav class="nav" aria-label="Navegación principal">
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#portafolio">Portafolio</a>
-          <a href="#reservar">Reservar</a>
+          <a href="#nosotros" data-i18n="navAbout">Nosotros</a>
+          <a href="#servicios" data-i18n="navServices">Servicios</a>
+          <a href="#portafolio" data-i18n="navPortfolio">Portafolio</a>
+          <a href="#reservar" data-i18n="navBook">Reservar</a>
         </nav>
+
         <div class="header-actions">
           <label class="language-switch" aria-label="Selector de idioma">
-            <select aria-label="Idioma">
+            <select id="language-select" aria-label="Idioma">
               <option value="nl">NL</option>
               <option value="es" selected>ES</option>
               <option value="en">EN</option>
             </select>
           </label>
-          <a class="button button-gold header-cta" href="#reservar">Reservar ahora</a>
+          <a class="button button-gold header-cta" href="#reservar" data-i18n="bookNow">Reservar ahora</a>
         </div>
       </div>
     </header>
 
     <main>
       <section id="inicio" class="hero">
-        <div class="hero-image" role="img" aria-label="Clientes de KEREN's Hair con distintos estilos de trenzas">
-        </div>
+        <div class="hero-image" role="img" aria-label="Clientes de KEREN's Hair con distintos estilos de trenzas"></div>
         <div class="hero-content container">
           <p class="eyebrow">KEREN'S HAIR</p>
-          <h1>Tu pelo.<br /><em>Tu estilo.</em></h1>
-          <a class="button button-gold" href="#reservar">Reservar ahora</a>
+          <h1>
+            <span data-i18n="heroLine1">Tu pelo.</span><br />
+            <em data-i18n="heroLine2">Tu estilo.</em>
+          </h1>
+          <a class="button button-gold" href="#reservar" data-i18n="bookNow">Reservar ahora</a>
         </div>
       </section>
 
       <section id="nosotros" class="section about">
         <div class="container about-grid">
           <div>
-            <p class="eyebrow">Sobre KEREN'S HAIR</p>
-            <h2>Tu belleza, a tu manera.</h2>
+            <p class="eyebrow" data-i18n="aboutEyebrow">Sobre KEREN'S HAIR</p>
+            <h2 data-i18n="aboutHeading">Tu belleza, a tu manera.</h2>
           </div>
           <div class="about-copy">
-            <p>
-              En KEREN'S Hair creemos que tu pelo es una forma de expresarte. Creamos
-              trenzas y peinados con cuidado, técnica y atención a cada detalle.
-            </p>
-            <p>
-              Queremos que salgas sintiéndote cómod@, segur@ y orgullos@ de tu estilo.
-              Atendemos a mujeres, hombres y niñ@s con una experiencia cercana y personalizada.
-            </p>
+            <p data-i18n="aboutText1">En KEREN'S Hair creemos que tu pelo es una forma de expresarte. Creamos trenzas y peinados con cuidado, técnica y atención a cada detalle.</p>
+            <p data-i18n="aboutText2">Queremos que salgas sintiéndote cómod@, segur@ y orgullos@ de tu estilo. Atendemos a mujeres, hombres y niñ@s con una experiencia cercana y personalizada.</p>
           </div>
         </div>
       </section>
@@ -68,29 +66,26 @@
       <section id="servicios" class="section services">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Servicios</p>
-            <h2>Un estilo para cada persona.</h2>
-            <p>Elige tu categoría para descubrir los estilos disponibles, precios orientativos y tiempos de realización.</p>
+            <p class="eyebrow" data-i18n="servicesEyebrow">Servicios</p>
+            <h2 data-i18n="servicesHeading">Un estilo para cada persona.</h2>
+            <p data-i18n="servicesText">Elige tu categoría para descubrir los estilos disponibles, precios orientativos y tiempos de realización.</p>
           </div>
 
           <div class="audience-grid">
             <a class="audience-card" href="#mujeres">
-              <span class="audience-number">01</span>
-              <h3>Mujeres</h3>
-              <p>Trenzas, estilos protectores y looks para cada ocasión.</p>
-              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+              <h3 data-i18n="womenLabel">Mujeres</h3>
+              <p data-i18n="womenDesc">Trenzas, estilos protectores y looks para cada ocasión.</p>
+              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
             </a>
             <a class="audience-card" href="#hombres">
-              <span class="audience-number">02</span>
-              <h3>Hombres</h3>
-              <p>Diseños limpios, cómodos y pensados para tu día a día.</p>
-              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+              <h3 data-i18n="menLabel">Hombres</h3>
+              <p data-i18n="menDesc">Diseños limpios, cómodos y pensados para tu día a día.</p>
+              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
             </a>
             <a class="audience-card" href="#ninos">
-              <span class="audience-number">03</span>
-              <h3>Niños</h3>
-              <p>Peinados bonitos y prácticos en un ambiente tranquilo.</p>
-              <span class="card-link">Ver estilos <span aria-hidden="true">→</span></span>
+              <h3 data-i18n="kidsLabel">Niños</h3>
+              <p data-i18n="kidsDesc">Peinados bonitos y prácticos en un ambiente tranquilo.</p>
+              <span class="card-link" data-i18n="viewStyles">Ver estilos <span aria-hidden="true">→</span></span>
             </a>
           </div>
         </div>
@@ -99,15 +94,15 @@
       <section id="portafolio" class="section portfolio">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Portafolio</p>
-            <h2>Encuentra tu próximo look.</h2>
-            <p>Toca cada estilo para conocer su duración aproximada y más detalles.</p>
+            <p class="eyebrow" data-i18n="portfolioEyebrow">Portafolio</p>
+            <h2 data-i18n="portfolioHeading">Encuentra tu próximo look.</h2>
+            <p data-i18n="portfolioText">Toca cada estilo para conocer su duración aproximada y más detalles.</p>
           </div>
 
           <div class="portfolio-group" id="mujeres">
             <div class="group-title">
-              <h3>Mujeres</h3>
-              <span>Estilos protectores y trenzas</span>
+              <h3 data-i18n="womenLabel">Mujeres</h3>
+              <span data-i18n="womenStyles">Estilos protectores y trenzas</span>
             </div>
             <div class="style-grid">
               <button class="style-card" type="button" data-style="Box braids" data-duration="4–7 horas" data-description="Trenzas versátiles y duraderas, ideales para proteger tu cabello y cambiar de look.">
@@ -122,39 +117,55 @@
                 <span class="style-image">Foto próximamente</span>
                 <span class="style-info"><strong>Cornrows</strong><small>Desde €35 · 2–4 h</small></span>
               </button>
+              <button class="style-card" type="button" data-style="Fulani braids" data-duration="3–5 horas" data-description="Trenzas laterales con un estilo elegante y sofisticado.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Fulani braids</strong><small>Desde €50 · 3–5 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Goddess braids" data-duration="3–5 horas" data-description="Trenzas gruesas y voluminosas para un look divino y llamativo.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Goddess braids</strong><small>Desde €50 · 3–5 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Feed-in braids" data-duration="4–7 horas" data-description="Trenzas con extensiones incorporadas gradualmente para un look natural.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Feed-in braids</strong><small>Desde €55 · 4–7 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Boho braids" data-duration="3–5 horas" data-description="Trenzas bohemias con un toque relajado y desenfadado.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Boho braids</strong><small>Desde €45 · 3–5 h</small></span>
+              </button>
+              <button class="style-card" type="button" data-style="Twists" data-duration="3–5 horas" data-description="Twists suaves y elegantes para un estilo versátil y cómodo.">
+                <span class="style-image">Foto próximamente</span>
+                <span class="style-info"><strong>Twists</strong><small>Desde €40 · 3–5 h</small></span>
+              </button>
             </div>
           </div>
 
           <div class="portfolio-group" id="hombres">
             <div class="group-title">
-              <h3>Hombres</h3>
-              <span>Diseños definidos y actuales</span>
+              <h3 data-i18n="menLabel">Hombres</h3>
+              <span data-i18n="menStyles">Diseños definidos y actuales</span>
             </div>
             <div class="style-grid">
-              <button class="style-card" type="button" data-style="Trenzas masculinas" data-duration="2–4 horas" data-description="Trenzas limpias y personalizadas para un look actual y duradero.">
+              <button class="style-card" type="button" data-style="Cornrows" data-duration="2–4 horas" data-description="Trenzas limpias y personalizadas para un look actual y duradero.">
                 <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Trenzas masculinas</strong><small>Desde €35 · 2–4 h</small></span>
+                <span class="style-info"><strong>Cornrows</strong><small>Desde €35 · 2–4 h</small></span>
               </button>
-              <button class="style-card" type="button" data-style="Diseño con líneas" data-duration="1–2 horas" data-description="Líneas y detalles definidos para completar tu estilo.">
+              <button class="style-card" type="button" data-style="Box braids" data-duration="2–4 horas" data-description="Trenzas cuadradas y definidas con un estilo moderno y personalizable.">
                 <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Diseño con líneas</strong><small>Desde €25 · 1–2 h</small></span>
+                <span class="style-info"><strong>Box braids</strong><small>Desde €40 · 2–4 h</small></span>
               </button>
             </div>
           </div>
 
           <div class="portfolio-group" id="ninos">
             <div class="group-title">
-              <h3>Niños</h3>
-              <span>Peinados cómodos y divertidos</span>
+              <h3 data-i18n="kidsLabel">Niños</h3>
+              <span data-i18n="kidsStyles">Peinados cómodos y divertidos</span>
             </div>
             <div class="style-grid">
-              <button class="style-card" type="button" data-style="Trenzas infantiles" data-duration="1–3 horas" data-description="Un look bonito y cómodo, adaptado a la edad y al ritmo de cada niño.">
+              <button class="style-card" type="button" data-style="Imagen de referencia" data-duration="Personalizado" data-description="Envía una imagen de referencia del peinado que deseas para tu hijo/a. Nos encargaremos de adaptarlo a su comodidad.">
                 <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Trenzas infantiles</strong><small>Desde €25 · 1–3 h</small></span>
-              </button>
-              <button class="style-card" type="button" data-style="Coletas y diseños" data-duration="1–2 horas" data-description="Diseños sencillos y alegres para el colegio, celebraciones o cualquier día.">
-                <span class="style-image">Foto próximamente</span>
-                <span class="style-info"><strong>Coletas y diseños</strong><small>Desde €20 · 1–2 h</small></span>
+                <span class="style-info"><strong data-i18n="kidsReference">Imagen de referencia</strong><small data-i18n="kidsReferenceDesc">Personalizado</small></span>
               </button>
             </div>
           </div>
@@ -164,32 +175,49 @@
       <section class="mid-cta">
         <div class="container cta-inner">
           <div>
-            <p class="eyebrow">¿Ya encontraste tu estilo?</p>
-            <h2>Hablemos de tu próximo look.</h2>
+            <p class="eyebrow" data-i18n="foundStyle">¿Ya encontraste tu estilo?</p>
+            <h2 data-i18n="talkStyle">Hablemos de tu próximo look.</h2>
           </div>
-          <a class="button button-gold" href="#reservar">Reservar ahora</a>
+          <a class="button button-gold" href="#reservar" data-i18n="bookNow">Reservar ahora</a>
         </div>
       </section>
 
       <section id="reservar" class="section booking">
         <div class="container booking-layout">
           <div class="booking-copy">
-            <p class="eyebrow">Reserva tu cita</p>
-            <h2>Cuéntanos qué tienes en mente.</h2>
-            <p>Completa el formulario y se abrirá WhatsApp con todos tus datos. Neilis te responderá con el precio exacto y la disponibilidad.</p>
-            <p class="booking-note"><strong>Depósito:</strong> la cita se confirma con un depósito del 20%, enviado por un enlace de Revolut después de confirmar el precio.</p>
+            <p class="eyebrow" data-i18n="bookingEyebrow">Reserva tu cita</p>
+            <h2 data-i18n="bookingHeading">Cuéntanos qué tienes en mente.</h2>
+            <p data-i18n="bookingText">Completa el formulario y se abrirá WhatsApp con todos tus datos. Neilis te responderá con el precio exacto y la disponibilidad.</p>
+            <p class="booking-note"><strong data-i18n="depositLabel">Depósito:</strong> <span data-i18n="depositText">la cita se confirma con un depósito del 20%, enviado por un enlace de Revolut después de confirmar el precio.</span></p>
           </div>
 
           <form id="booking-form" class="booking-form" novalidate>
             <div class="field-row two-cols">
-              <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" required /></label>
-              <label>WhatsApp<input type="tel" name="whatsapp" placeholder="+34 600 000 000" required /></label>
+              <label>
+                <span class="label-text" data-i18n="nameLabel">Nombre</span>
+                <input type="text" name="nombre" placeholder="Tu nombre" required />
+              </label>
+              <label>
+                <span class="label-text" data-i18n="whatsappLabel">WhatsApp</span>
+                <input type="tel" name="whatsapp" placeholder="+34 600 000 000" required />
+              </label>
             </div>
+
             <div class="field-row two-cols">
               <label>
-                Tipo de cabello
+                <span class="label-text" data-i18n="genderLabel">Género</span>
+                <select id="gender-select" name="genero" required>
+                  <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
+                  <option value="mujer" data-i18n="womanOption">Mujer</option>
+                  <option value="hombre" data-i18n="manOption">Hombre</option>
+                  <option value="nino" data-i18n="childOption">Niño/a</option>
+                </select>
+              </label>
+
+              <label>
+                <span class="label-text" data-i18n="hairTypeLabel">Tipo de cabello</span>
                 <select name="tipoCabello" required>
-                  <option value="" selected disabled>Selecciona una categoría</option>
+                  <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
                   <option value="1A - Liso muy fino">1A - Liso muy fino</option>
                   <option value="1B - Liso">1B - Liso</option>
                   <option value="1C - Liso grueso">1C - Liso grueso</option>
@@ -202,48 +230,61 @@
                   <option value="4A - Afro definido">4A - Afro definido</option>
                   <option value="4B - Afro en zigzag">4B - Afro en zigzag</option>
                   <option value="4C - Afro muy cerrado">4C - Afro muy cerrado</option>
-                  <option value="No estoy segur@">No estoy segur@</option>
+                  <option value="No estoy segur@" data-i18n="notSure">No estoy segur@</option>
                 </select>
               </label>
-              <label>Largo de cabello<input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required /></label>
             </div>
+
             <label>
-              Estilo de trenzas que deseas
-              <select name="estilo" required>
-                <option value="" selected disabled>Selecciona un estilo</option>
-                <option value="Box braids">Box braids</option>
-                <option value="Knotless braids">Knotless braids</option>
-                <option value="Cornrows">Cornrows</option>
-                <option value="Feed-in braids">Feed-in braids</option>
-                <option value="Fulani braids">Fulani braids</option>
-                <option value="Goddess braids">Goddess braids</option>
-                <option value="Boho braids">Boho braids</option>
-                <option value="Trenzas africanas">Trenzas africanas</option>
-                <option value="Trenzas con extensiones">Trenzas con extensiones</option>
-                <option value="Twists">Twists</option>
-                <option value="Passion twists">Passion twists</option>
-                <option value="Senegalese twists">Senegalese twists</option>
-                <option value="Trenzas infantiles">Trenzas infantiles</option>
-                <option value="Diseño personalizado">Diseño personalizado</option>
+              <span class="label-text" data-i18n="hairLengthLabel">Largo de cabello</span>
+              <input type="text" name="largoCabello" placeholder="Corto, medio, largo..." required />
+            </label>
+
+            <label>
+              <span class="label-text" data-i18n="styleLabel">Estilo de trenzas que deseas</span>
+              <select id="style-select" name="estilo" required>
+                <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
               </select>
             </label>
-            <label>Detalles o referencia<textarea name="detallesEstilo" rows="4" placeholder="Largo, color, diseño o cualquier detalle..." required></textarea></label>
-            <label>Fecha preferida<input type="date" name="fecha" required /></label>
-            <label class="upload-field">Foto de referencia (opcional)<input type="file" name="fotoReferencia" accept="image/*" /></label>
-            <div class="checkbox-group">
-              <label class="checkbox-wrap"><input type="checkbox" name="usoFoto" /><span>Acepto que se pueda usar mi foto en el portafolio.</span></label>
-              <label class="checkbox-wrap"><input type="checkbox" name="menor" /><span>Esta reserva es para un menor.</span></label>
+
+            <label>
+              <span class="label-text" data-i18n="detailsLabel">Detalles o referencia</span>
+              <textarea name="detallesEstilo" rows="4" placeholder="Largo, color, diseño o cualquier detalle..." required></textarea>
+            </label>
+
+            <label>
+              <span class="label-text" data-i18n="dateLabel">Fecha preferida</span>
+              <input type="date" name="fecha" required />
+            </label>
+
+            <div id="reference-photo-field" class="reference-upload">
+              <label>
+                <span class="label-text" data-i18n="referencePhotoLabel">Foto de referencia (opcional)</span>
+                <input id="fotoReferencia" type="file" name="fotoReferencia" accept="image/*" />
+              </label>
             </div>
-            <button type="submit" class="button button-navy submit-button">Enviar reserva por WhatsApp</button>
+
+            <div class="checkbox-group">
+              <label class="checkbox-wrap">
+                <input type="checkbox" name="usoFoto" />
+                <span data-i18n="photoConsent">Acepto que se pueda usar mi foto en el portafolio.</span>
+              </label>
+              <label class="checkbox-wrap">
+                <input type="checkbox" name="menor" />
+                <span data-i18n="minorLabel">Esta reserva es para un menor.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="button button-navy submit-button" data-i18n="submitButton">Enviar reserva por WhatsApp</button>
           </form>
         </div>
       </section>
 
       <section class="final-cta">
         <div class="container final-cta-inner">
-          <p class="eyebrow">Tu pelo. Tu estilo. Tu momento.</p>
-          <h2>Lista para reservar?</h2>
-          <a class="button button-gold" href="#reservar">Reservar ahora</a>
+          <p class="eyebrow" data-i18n="finalTagline">Tu pelo. Tu estilo. Tu momento.</p>
+          <h2 data-i18n="finalHeading">Lista para reservar?</h2>
+          <a class="button button-gold" href="#reservar" data-i18n="bookNow">Reservar ahora</a>
         </div>
       </section>
     </main>
@@ -251,21 +292,29 @@
     <footer class="site-footer">
       <div class="container footer-wrap">
         <div>
-          <a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="assets/images/brand/keren-hair-logo.jpg" alt="Keren's Hair Professional Hair Styling" /></a>
-          <p class="footer-tag">Tu pelo, tu estilo.</p>
+          <a class="brand footer-brand" href="#inicio">
+            <img class="brand-logo" src="assets/images/brand/keren-hair-logo.jpg" alt="Keren's Hair Professional Hair Styling" />
+          </a>
+          <p class="footer-tag" data-i18n="tagline">Tu pelo, tu estilo.</p>
         </div>
-        <div class="footer-links"><a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a><a href="https://nextdoor.com" target="_blank" rel="noreferrer">Nextdoor</a></div>
-        <div class="legal-links"><a href="#">Privacidad</a><a href="#">Políticas</a></div>
+        <div class="footer-links">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://nextdoor.com" target="_blank" rel="noreferrer">Nextdoor</a>
+        </div>
+        <div class="legal-links">
+          <a href="#" data-i18n="privacy">Privacidad</a>
+          <a href="#" data-i18n="policies">Políticas</a>
+        </div>
       </div>
     </footer>
 
     <dialog id="style-dialog" class="style-dialog">
       <button class="dialog-close" type="button" aria-label="Cerrar">×</button>
-      <p class="eyebrow">Detalle del estilo</p>
+      <p class="eyebrow" data-i18n="styleDetail">Detalle del estilo</p>
       <h2 id="dialog-title">Estilo</h2>
       <p id="dialog-description"></p>
-      <p class="dialog-duration"><strong>Duración aproximada:</strong> <span id="dialog-duration"></span></p>
-      <a class="button button-gold" href="#reservar">Reservar este estilo</a>
+      <p class="dialog-duration"><strong data-i18n="durationLabel">Duración aproximada:</strong> <span id="dialog-duration"></span></p>
+      <a class="button button-gold" href="#reservar" data-i18n="bookThisStyle">Reservar este estilo</a>
     </dialog>
 
     <script src="js/script.js"></script>
