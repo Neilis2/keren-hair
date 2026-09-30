@@ -278,17 +278,36 @@ label {
 
 .label-text { display: inline-block; }
 
-input, textarea, label select {
+input, textarea, .select-trigger {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--white);
   color: var(--black);
+  text-align: left;
 }
-input:focus, textarea:focus, label select:focus {
+input:focus, textarea:focus, .select-trigger:focus {
   outline: 2px solid rgba(201,163,78,0.35);
   border-color: var(--gold);
+}
+.select-trigger { cursor: pointer; }
+.select-trigger::after {
+  content: "⌄";
+  float: right;
+  color: var(--muted);
+}
+.select-trigger.is-placeholder { color: #757b84; }
+.select-native {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 textarea { resize: vertical; min-height: 120px; }
 .upload-field input { padding: 0.7rem; }
@@ -365,6 +384,53 @@ textarea { resize: vertical; min-height: 120px; }
   cursor: pointer;
 }
 .dialog-duration { color: var(--black); }
+
+.select-dialog {
+  position: fixed;
+  inset: auto 0 0;
+  width: min(560px, 100%);
+  max-height: min(75vh, 700px);
+  margin: 0 auto;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 1.25rem 1.25rem 0 0;
+  box-shadow: var(--shadow);
+}
+.select-dialog[open] { animation: select-slide-in 180ms ease-out both; }
+.select-dialog.is-closing { animation: select-slide-out 180ms ease-in both; }
+.select-dialog::backdrop { background: rgba(7,27,58,0.55); }
+.select-dialog-title { margin: 0 0 1rem; font-size: 1.6rem; }
+.select-options { display: grid; gap: 0.5rem; }
+.select-option {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: left;
+  cursor: pointer;
+}
+.select-option[aria-selected="true"] {
+  border-color: var(--gold);
+  background: var(--off-white);
+}
+.select-option:hover, .select-option:focus-visible {
+  border-color: var(--gold);
+  outline: 2px solid rgba(201,163,78,0.35);
+}
+@keyframes select-slide-in {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes select-slide-out {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .select-dialog[open], .select-dialog.is-closing { animation-duration: 1ms; }
+}
 
 @media (max-width: 850px) {
   .nav { display: none; }
