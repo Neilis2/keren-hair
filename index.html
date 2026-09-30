@@ -237,7 +237,12 @@
 
             <label>
               <span class="label-text" data-i18n="hairLengthLabel">Largo de cabello</span>
-              <input type="text" name="largoCabello" placeholder="Corto, medio, largo..." data-i18n-placeholder="hairLengthPlaceholder" required />
+              <select name="largoCabello" required>
+                <option value="" selected disabled data-i18n="selectOption">Selecciona una opción</option>
+                <option value="short" data-i18n="hairLengthShort">Corto</option>
+                <option value="medium" data-i18n="hairLengthMedium">Medio</option>
+                <option value="long" data-i18n="hairLengthLong">Largo</option>
+              </select>
             </label>
 
             <label>
@@ -315,6 +320,11 @@
       <p id="dialog-description"></p>
       <p class="dialog-duration"><strong data-i18n="durationLabel">Duración aproximada:</strong> <span id="dialog-duration"></span></p>
       <a class="button button-gold" href="#reservar" data-i18n="bookThisStyle">Reservar este estilo</a>
+    </dialog>
+
+    <dialog id="select-dialog" class="select-dialog" aria-labelledby="select-dialog-title">
+      <h2 id="select-dialog-title" class="select-dialog-title"></h2>
+      <div id="select-options" class="select-options"></div>
     </dialog>
 
     <script src="js/script.js"></script>

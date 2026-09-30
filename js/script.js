@@ -54,7 +54,8 @@ const translations = {
     hair2a: "2A - Ondas suaves", hair2b: "2B - Ondas definidas", hair2c: "2C - Ondas marcadas",
     hair3a: "3A - Rizo suelto", hair3b: "3B - Rizo medio", hair3c: "3C - Rizo cerrado",
     hair4a: "4A - Afro definido", hair4b: "4B - Afro en zigzag", hair4c: "4C - Afro muy cerrado",
-    hairLengthLabel: "Largo de cabello", hairLengthPlaceholder: "Corto, medio, largo...",
+    hairLengthLabel: "Largo de cabello",
+    hairLengthShort: "Corto", hairLengthMedium: "Medio", hairLengthLong: "Largo",
     styleLabel: "Estilo de trenzas que deseas", detailsLabel: "Detalles o referencia",
     detailsPlaceholder: "Largo, color, diseño o cualquier detalle...",
     dateLabel: "Fecha preferida", referencePhotoLabel: "Foto de referencia (opcional)",
@@ -129,7 +130,8 @@ const translations = {
     hair2a: "2A - Losse golven", hair2b: "2B - Gedefinieerde golven", hair2c: "2C - Sterke golven",
     hair3a: "3A - Losse krullen", hair3b: "3B - Middelgrote krullen", hair3c: "3C - Strakke krullen",
     hair4a: "4A - Gedefinieerd afrohaar", hair4b: "4B - Zigzag afrohaar", hair4c: "4C - Zeer strak afrohaar",
-    hairLengthLabel: "Haarlengte", hairLengthPlaceholder: "Kort, halflang, lang...",
+    hairLengthLabel: "Haarlengte",
+    hairLengthShort: "Kort", hairLengthMedium: "Halflang", hairLengthLong: "Lang",
     styleLabel: "Gewenste vlechtstijl", detailsLabel: "Details of voorbeeld",
     detailsPlaceholder: "Lengte, kleur, ontwerp of andere details...",
     dateLabel: "Gewenste datum", referencePhotoLabel: "Referentiefoto (optioneel)",
@@ -204,7 +206,8 @@ const translations = {
     hair2a: "2A - Loose waves", hair2b: "2B - Defined waves", hair2c: "2C - Deep waves",
     hair3a: "3A - Loose curls", hair3b: "3B - Medium curls", hair3c: "3C - Tight curls",
     hair4a: "4A - Defined afro", hair4b: "4B - Zigzag afro", hair4c: "4C - Very tight afro",
-    hairLengthLabel: "Hair length", hairLengthPlaceholder: "Short, medium, long...",
+    hairLengthLabel: "Hair length",
+    hairLengthShort: "Short", hairLengthMedium: "Medium", hairLengthLong: "Long",
     styleLabel: "Desired braid style", detailsLabel: "Details or reference",
     detailsPlaceholder: "Length, color, design, or any other details...",
     dateLabel: "Preferred date", referencePhotoLabel: "Reference photo (optional)",
@@ -238,12 +241,111 @@ document.addEventListener('DOMContentLoaded', () => {
   const dialogTitle = document.getElementById('dialog-title');
   const dialogDescription = document.getElementById('dialog-description');
   const dialogDuration = document.getElementById('dialog-duration');
+  const selectDialog = document.getElementById('select-dialog');
+  const selectDialogTitle = document.getElementById('select-dialog-title');
+  const selectOptions = document.getElementById('select-options');
   const styleCards = Array.from(document.querySelectorAll('.style-card'));
   const stylePlaceholder = styleSelect?.querySelector('option[value=""]');
   let currentLanguage = 'es';
   let activeCard = null;
+  let selectDialogCloseTimer;
+  let styleDialogCloseTimer;
 
   const text = (key) => translations[currentLanguage][key] || translations.es[key] || key;
+
+  const syncSelectTrigger = (select) => {
+    const trigger = select._selectTrigger;
+    if (!trigger) return;
+    trigger.textContent = select.selectedOptions[0]?.textContent.trim() || '';
+    trigger.classList.toggle('is-placeholder', !select.value);
+    const label = select.closest('label');
+    const labelText = label?.querySelector('.label-text')?.textContent.trim()
+      || label?.getAttribute('aria-label')
+      || select.getAttribute('aria-label')
+      || '';
+    trigger.setAttribute('aria-label', `${labelText}: ${trigger.textContent}`);
+  };
+
+  const closeSelectDialog = () => {
+    if (!selectDialog?.open) return;
+    selectDialog.classList.add('is-closing');
+    document.querySelectorAll('.select-trigger[aria-expanded="true"]').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+    window.clearTimeout(selectDialogCloseTimer);
+    selectDialogCloseTimer = window.setTimeout(() => selectDialog.close(), 180);
+  };
+
+  const closeStyleDialog = () => {
+    if (!dialog?.open) return;
+    dialog.classList.add('is-closing');
+    window.clearTimeout(styleDialogCloseTimer);
+    styleDialogCloseTimer = window.setTimeout(() => dialog.close(), 180);
+  };
+
+  const openSelectDialog = (select) => {
+    if (!selectDialog || !selectDialogTitle || !selectOptions) return;
+    window.clearTimeout(selectDialogCloseTimer);
+    selectDialog.classList.remove('is-closing');
+    document.querySelectorAll('.select-trigger').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+    select._selectTrigger?.setAttribute('aria-expanded', 'true');
+    selectOptions.replaceChildren();
+    const label = select.closest('label');
+    selectDialogTitle.textContent = label?.querySelector('.label-text')?.textContent.trim()
+      || label?.getAttribute('aria-label')
+      || select.getAttribute('aria-label')
+      || '';
+    Array.from(select.options).forEach((option) => {
+      if (option.disabled) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'select-option';
+      button.textContent = option.textContent.trim();
+      button.setAttribute('aria-pressed', String(option.selected));
+      button.addEventListener('click', () => {
+        select.value = option.value;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+        closeSelectDialog();
+      });
+      selectOptions.append(button);
+    });
+    if (selectDialog.open) selectDialog.close();
+    selectDialog.showModal();
+  };
+
+  document.querySelectorAll('select').forEach((select) => {
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'select-trigger';
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.setAttribute('aria-controls', 'select-dialog');
+    trigger.setAttribute('aria-expanded', 'false');
+    select._selectTrigger = trigger;
+    select.classList.add('select-native');
+    select.tabIndex = -1;
+    select.setAttribute('aria-hidden', 'true');
+    select.insertAdjacentElement('afterend', trigger);
+    trigger.addEventListener('click', () => openSelectDialog(select));
+    select.addEventListener('change', () => syncSelectTrigger(select));
+    syncSelectTrigger(select);
+  });
+
+  selectDialog?.addEventListener('click', (event) => {
+    if (event.target === selectDialog) closeSelectDialog();
+  });
+  selectDialog?.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeSelectDialog();
+  });
+  selectDialog?.addEventListener('close', () => {
+    selectDialog.classList.remove('is-closing');
+    document.querySelectorAll('.select-trigger').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  dialog?.addEventListener('close', () => dialog.classList.remove('is-closing'));
 
   const saveLanguage = (language) => {
     try {
@@ -276,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeCard) showStyleDetails(activeCard);
     populateStyleOptions(styleSelect?.value);
     updateReferenceRequirement();
+    document.querySelectorAll('select').forEach(syncSelectTrigger);
   };
 
   const getStyleName = (card) => text(card.dataset.styleKey) || card.dataset.style;
@@ -291,7 +394,10 @@ document.addEventListener('DOMContentLoaded', () => {
     styleSelect.replaceChildren(stylePlaceholder);
     stylePlaceholder.textContent = text(genderSelect?.value ? 'selectOption' : 'selectStyleFirst');
     stylePlaceholder.selected = true;
-    if (!genderSelect?.value) return;
+    if (!genderSelect?.value) {
+      syncSelectTrigger(styleSelect);
+      return;
+    }
 
     const matchingCards = styleCards.filter((card) => card.closest('.portfolio-group')?.dataset.audience === genderSelect.value);
     matchingCards.forEach((card) => {
@@ -305,6 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (matchingCards.some((card) => String(styleCards.indexOf(card)) === previousValue)) {
       styleSelect.value = previousValue;
     }
+    syncSelectTrigger(styleSelect);
   }
 
   const updateReferenceRequirement = () => {
@@ -326,20 +433,23 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       activeCard = card;
       showStyleDetails(card);
+      window.clearTimeout(styleDialogCloseTimer);
+      dialog.classList.remove('is-closing');
       dialog.showModal();
     });
   });
 
-  document.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+  document.querySelector('.dialog-close')?.addEventListener('click', closeStyleDialog);
   dialog?.addEventListener('click', (event) => {
-    if (event.target === dialog) dialog.close();
+  if (event.target === dialog) closeStyleDialog();
   });
   document.querySelector('[data-i18n="bookThisStyle"]')?.addEventListener('click', () => {
     if (!activeCard) return;
     genderSelect.value = activeCard.closest('.portfolio-group').dataset.audience;
     genderSelect.dispatchEvent(new Event('change'));
     styleSelect.value = String(styleCards.indexOf(activeCard));
-    dialog.close();
+    syncSelectTrigger(styleSelect);
+    closeStyleDialog();
   });
 
   genderSelect?.addEventListener('change', () => {
@@ -380,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fecha = (formData.get('fecha') || '').toString().trim();
     const usoFoto = formData.get('usoFoto') === 'on';
     const menor = formData.get('menor') === 'on';
-    const requiredValues = [nombre, whatsapp, genderSelect?.value, getSelectedText('tipoCabello'),
+    const requiredValues = [nombre, whatsapp.replace(/\D/g, ''), genderSelect?.value, getSelectedText('tipoCabello'),
       largoCabello, styleSelect?.value, detallesEstilo, fecha];
 
     if (requiredValues.some((value) => !value)) {
@@ -414,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const message = encodeURIComponent(lines.join('\n'));
-    const phone = '34600000000';
+    const phone = whatsapp.replace(/\D/g, '');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   });
 });
