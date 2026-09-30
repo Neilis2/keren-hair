@@ -249,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLanguage = 'es';
   let activeCard = null;
   let selectDialogCloseTimer;
+  let styleDialogCloseTimer;
 
   const text = (key) => translations[currentLanguage][key] || translations.es[key] || key;
 
@@ -258,24 +259,38 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.textContent = select.selectedOptions[0]?.textContent.trim() || '';
     trigger.classList.toggle('is-placeholder', !select.value);
     const label = select.closest('label');
-    trigger.setAttribute('aria-label',
-      label?.querySelector('.label-text')?.textContent.trim()
+    const labelText = label?.querySelector('.label-text')?.textContent.trim()
       || label?.getAttribute('aria-label')
       || select.getAttribute('aria-label')
-      || '');
+      || '';
+    trigger.setAttribute('aria-label', `${labelText}: ${trigger.textContent}`);
   };
 
   const closeSelectDialog = () => {
     if (!selectDialog?.open) return;
     selectDialog.classList.add('is-closing');
+    document.querySelectorAll('.select-trigger[aria-expanded="true"]').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
     window.clearTimeout(selectDialogCloseTimer);
     selectDialogCloseTimer = window.setTimeout(() => selectDialog.close(), 180);
+  };
+
+  const closeStyleDialog = () => {
+    if (!dialog?.open) return;
+    dialog.classList.add('is-closing');
+    window.clearTimeout(styleDialogCloseTimer);
+    styleDialogCloseTimer = window.setTimeout(() => dialog.close(), 180);
   };
 
   const openSelectDialog = (select) => {
     if (!selectDialog || !selectDialogTitle || !selectOptions) return;
     window.clearTimeout(selectDialogCloseTimer);
     selectDialog.classList.remove('is-closing');
+    document.querySelectorAll('.select-trigger').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+    select._selectTrigger?.setAttribute('aria-expanded', 'true');
     selectOptions.replaceChildren();
     const label = select.closest('label');
     selectDialogTitle.textContent = label?.querySelector('.label-text')?.textContent.trim()
@@ -288,8 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
       button.type = 'button';
       button.className = 'select-option';
       button.textContent = option.textContent.trim();
-      button.setAttribute('role', 'option');
-      button.setAttribute('aria-selected', String(option.selected));
+      button.setAttribute('aria-pressed', String(option.selected));
       button.addEventListener('click', () => {
         select.value = option.value;
         select.dispatchEvent(new Event('change', { bubbles: true }));
@@ -307,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.className = 'select-trigger';
     trigger.setAttribute('aria-haspopup', 'dialog');
     trigger.setAttribute('aria-controls', 'select-dialog');
+    trigger.setAttribute('aria-expanded', 'false');
     select._selectTrigger = trigger;
     select.classList.add('select-native');
     select.tabIndex = -1;
@@ -326,7 +341,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   selectDialog?.addEventListener('close', () => {
     selectDialog.classList.remove('is-closing');
+    document.querySelectorAll('.select-trigger').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', 'false');
+    });
   });
+  dialog?.addEventListener('close', () => dialog.classList.remove('is-closing'));
 
   const saveLanguage = (language) => {
     try {
@@ -414,20 +433,23 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       activeCard = card;
       showStyleDetails(card);
+      window.clearTimeout(styleDialogCloseTimer);
+      dialog.classList.remove('is-closing');
       dialog.showModal();
     });
   });
 
-  document.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
+  document.querySelector('.dialog-close')?.addEventListener('click', closeStyleDialog);
   dialog?.addEventListener('click', (event) => {
-    if (event.target === dialog) dialog.close();
+  if (event.target === dialog) closeStyleDialog();
   });
   document.querySelector('[data-i18n="bookThisStyle"]')?.addEventListener('click', () => {
     if (!activeCard) return;
     genderSelect.value = activeCard.closest('.portfolio-group').dataset.audience;
     genderSelect.dispatchEvent(new Event('change'));
     styleSelect.value = String(styleCards.indexOf(activeCard));
-    dialog.close();
+    syncSelectTrigger(styleSelect);
+    closeStyleDialog();
   });
 
   genderSelect?.addEventListener('change', () => {
