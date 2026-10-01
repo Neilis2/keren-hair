@@ -221,7 +221,7 @@ p { color: var(--muted); }
   font-weight: 700;
 }
 .style-image.has-photo { padding: 0; }
-.style-image img { width: 100%; height: 190px; object-fit: cover; }
+.style-image img { width: 100%; height: 190px; object-fit: cover; object-position: center top; }
 .style-image img.image-position-lower { object-position: center 45%; }
 .style-info {
   display: grid;
@@ -468,5 +468,6 @@ textarea { resize: vertical; min-height: 120px; }
   .header-cta { padding: 0.65rem 0.8rem; font-size: 0.78rem; }
   .hero h1 { font-size: clamp(3.6rem, 17vw, 5rem); }
   .two-cols { grid-template-columns: 1fr; }
+  .style-image img { height: 260px; }
   .style-card { display: block; }
 }
